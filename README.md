@@ -11,7 +11,7 @@ computer architecture textbooks and reference designs.
 ---
 
 ## Block Diagram
-![Block Diagram](docs/block_diagram.png)
+![Block Diagram](docs/block_diagram.jpeg)
 
 ---
 

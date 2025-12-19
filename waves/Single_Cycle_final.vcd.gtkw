@@ -1,0 +1,150 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Dec 18 19:53:27 2025
+[*]
+[dumpfile] "A:\VERILOG\RISCVC2\Single_Cycle.vcd"
+[dumpfile_mtime] "Thu Dec 18 19:43:58 2025"
+[dumpfile_size] 10653
+[savefile] "A:\VERILOG\RISCVC2\Single_Cycle_final.vcd.gtkw"
+[timestart] 0
+[size] 1536 793
+[pos] -1 -1
+*-16.834242 74300 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Single_Cycle_Top_Tb.
+[treeopen] Single_Cycle_Top_Tb.Single_Cycle_Top.
+[treeopen] Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.
+[treeopen] Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_Register_to_ALU.
+[sst_width] 277
+[signals_width] 352
+[sst_expanded] 1
+[sst_vpaned_height] 467
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC.clk
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC.rst
+@800200
+-PC
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC.PC[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC.PC_Next[31:0]
+@1000200
+-PC
+@800200
+-INSTRUCTION MEMORY
+@22
+Single_Cycle_Top_Tb.Single_Cycle_Top.Instruction_Memory.A[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Instruction_Memory.RD[31:0]
+@1000200
+-INSTRUCTION MEMORY
+@800200
+-CONTROL UNIT
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Op[6:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.funct3[2:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.ALUControl[2:0]
+@1000200
+-CONTROL UNIT
+@800200
+-PC ADDER
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Adder.a[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Adder.b[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Adder.c[31:0]
+@1000200
+-PC ADDER
+@800200
+-PC Branching
+@200
+-
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Banching.a[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Banching.b[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.PC_Banching.c[31:0]
+@1000200
+-PC Branching
+@800200
+-Mux PC
+@200
+-
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Branchin_Mux.a[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Branchin_Mux.b[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.branchSel
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Branchin_Mux.c[31:0]
+@1000200
+-Mux PC
+@800200
+-REGISTER FILE
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.A1[4:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.A2[4:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.A3[4:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.RD1[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Main_Decoder.ALUSrc
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.RD2[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.RegWrite
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Reg_file.WD3[31:0]
+@1000200
+-REGISTER FILE
+@800200
+-SIGN EXTEND
+@22
+Single_Cycle_Top_Tb.Single_Cycle_Top.Sign_Extend.In[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Main_Decoder.ImmSrc[1:0]
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Sign_Extend.Imm_Ext[31:0]
+@1000200
+-SIGN EXTEND
+@800200
+-Mux Register to ALU
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_Register_to_ALU.a[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_Register_to_ALU.b[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Main_Decoder.ALUSrc
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_Register_to_ALU.c[31:0]
+@1000200
+-Mux Register to ALU
+@800200
+-ALU
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.A[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.B[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.ALUControl[2:0]
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.Result[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.OverFlow
+Single_Cycle_Top_Tb.Single_Cycle_Top.ALU.Negative
+@1000200
+-ALU
+@800205
+-DATA MEMORY
+@25
+Single_Cycle_Top_Tb.Single_Cycle_Top.Data_Memory.A[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Data_Memory.RD[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Main_Decoder.MemWrite
+Single_Cycle_Top_Tb.Single_Cycle_Top.Data_Memory.WD[31:0]
+@1000205
+-DATA MEMORY
+@800200
+-Mux Data Memory to Registers
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_DataMemory_to_Register.a[31:0]
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_DataMemory_to_Register.b[31:0]
+@28
+Single_Cycle_Top_Tb.Single_Cycle_Top.Control_Unit_Top.Main_Decoder.ResultSrc
+@24
+Single_Cycle_Top_Tb.Single_Cycle_Top.Mux_DataMemory_to_Register.c[31:0]
+@1000200
+-Mux Data Memory to Registers
+[pattern_trace] 1
+[pattern_trace] 0

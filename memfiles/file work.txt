@@ -1,0 +1,12 @@
+#sort
+first populate 55,13,27,83,78 in register
+and then sorts it
+
+#storeLoad
+first populate 13 in register
+then store 13 in memory through register
+then load the value from memory to register
+
+#addSub
+first populate register with x1=12 and x2=9
+then x1+x2,x1-x2,x2-x1

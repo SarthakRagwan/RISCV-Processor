@@ -130,6 +130,11 @@ riscv-single-cycle-cpu/
 
 ---
 
+## Block Diagram
+![Block Diagram](docs/block_diagram.jpeg)
+
+---
+
 ## Future Work
 - Pipeline implementation
 - Hazard detection and forwarding

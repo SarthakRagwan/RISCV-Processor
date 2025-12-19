@@ -2,11 +2,12 @@
 
 ## Overview
 This project implements a **32-bit RV32I single-cycle RISC-V processor** using **Verilog HDL**.
+Implemented a complete datapath with ALU, register file, control unit, and instruction/data memory.
 The processor follows a **single-cycle datapath**, meaning each instruction completes
 fetch, decode, execute, memory access, and write-back within one clock cycle.
 
-The design closely follows the classical RISC-V single-cycle architecture used in
-computer architecture textbooks and reference designs.
+The processor supports R-type, I-type, load/store (S-type), and branch (B-type) instructions, 
+demonstrating core CPU control and datapath concepts.
 
 ---
 

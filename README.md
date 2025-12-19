@@ -1,12 +1,12 @@
-# RISC-V Single-Cycle Processor (RV32I) – Verilog
+# RV32I Single-Cycle RISC-V Processor – Verilog
 
 ## Overview
-This repository contains a **32-bit RV32I single-cycle RISC-V processor** implemented in **Verilog HDL**.
-The processor follows a **classical single-cycle architecture**, where instruction fetch, decode, execute,
-memory access, and write-back are completed within **one clock cycle**.
+This project implements a **32-bit RV32I single-cycle RISC-V processor** using **Verilog HDL**.
+The processor follows a **single-cycle datapath**, meaning each instruction completes
+fetch, decode, execute, memory access, and write-back within one clock cycle.
 
-The design is based on a standard RISC-V datapath consisting of a Program Counter, Instruction Memory,
-Register File, Control Unit, ALU, Immediate Generator, and Data Memory.
+The design closely follows the classical RISC-V single-cycle architecture used in
+computer architecture textbooks and reference designs.
 
 ---
 
@@ -15,52 +15,84 @@ Register File, Control Unit, ALU, Immediate Generator, and Data Memory.
 
 ---
 
-## Architecture Summary
-- Single-cycle datapath
-- Centralized control unit
-- Separate instruction and data memory
-- ALU-based execution and branch decision
-- PC update using PC + 4 or branch target
+## Datapath Description
+The processor datapath consists of the following interconnected blocks:
+
+### 1. Program Counter (PC)
+The **PC** holds the address of the current instruction. On every clock cycle, it is updated
+either to:
+- `PC + 4` for sequential execution, or
+- A **branch target address** when a branch condition is satisfied.
+
+### 2. Instruction Fetch
+The PC value is used to access the **Instruction Memory**, which outputs a 32-bit instruction.
+The instruction is divided into opcode, register indices, function fields, and immediate fields.
+
+### 3. Instruction Decode & Control
+The **Control Unit** decodes the opcode (and function fields) to generate control signals such as:
+- `RegWrite`, `ALUSrc`, `MemWrite`
+- `ResultSrc`, `Branch`, `ImmSrc`
+- `ALUControl`
+
+These signals control the behavior of the datapath for the current instruction.
+
+### 4. Register File
+The **Register File** provides two read operands (`rs1`, `rs2`) and supports writing back results
+to the destination register (`rd`) during the write-back stage.
+
+### 5. Immediate Generation
+The **Immediate Generator** extracts and sign-extends immediates based on instruction type:
+- I-type immediates for arithmetic and load instructions
+- S-type immediates for store instructions
+- B-type immediates for branch instructions
+
+### 6. Execute (ALU)
+The **ALU** performs:
+- Arithmetic operations (add, subtract)
+- Logical operations (and, or)
+- Comparison operations for branch decisions (equal, not equal, less than, greater than)
+
+The second ALU operand is selected either from the register file or the immediate generator
+based on the `ALUSrc` control signal.
+
+### 7. Memory Access
+For load and store instructions:
+- **Store (`sw`)** writes data from the register file to Data Memory
+- **Load (`lw`)** reads data from Data Memory
+
+### 8. Write Back
+The **Write-Back MUX** selects either:
+- The ALU result, or
+- Data read from memory
+
+The selected value is written back to the register file when `RegWrite` is asserted.
 
 ---
 
-## Supported Instruction Types
-This processor supports the following **RV32I instruction formats**:
-
-- **R-type** – Register-to-register arithmetic and logical operations
+## Supported Instruction Formats
+- **R-type** – Register arithmetic and logical instructions
 - **I-type** – Immediate arithmetic and load instructions
 - **S-type** – Store instructions
 - **B-type** – Branch instructions
 
 ---
 
-## Supported Instructions
+## Implemented Instructions
 
 ### Arithmetic & Logical
-- add
-- sub
-- and
-- or
-- addi
+- `add`, `sub`
+- `and`, `or`
+- `addi`
 
 ### Load & Store
-- lw
-- sw
+- `lw`
+- `sw`
 
 ### Branch
-- beq
-- bne
-- blt
-- bgt
-
----
-
-## Datapath Operation
-1. **Instruction Fetch** – Instruction is fetched from instruction memory using the Program Counter (PC).
-2. **Instruction Decode** – Opcode, funct3, and funct7 fields are decoded to generate control signals.
-3. **Execute** – ALU performs arithmetic, logical, or comparison operations.
-4. **Memory Access** – Data memory is accessed for load/store instructions.
-5. **Write Back** – ALU result or memory data is written back to the register file.
+- `beq`
+- `bne`
+- `blt`
+- `bgt`
 
 ---
 
@@ -70,19 +102,14 @@ riscv-single-cycle-cpu/
 │
 ├── src/        # Verilog RTL files
 ├── tb/         # Testbench files
-├── programs/   # Instruction memory files (.hex/.mem)
+├── programs/   # Instruction memory files
 ├── docs/       # Block diagram and documentation
 └── README.md
 ```
 
 ---
 
-## Simulation Flow
-1. Load instructions into instruction memory
-2. Apply clock and reset
-3. Observe execution using waveform viewer
-
-Example using Icarus Verilog:
+## Simulation
 ```bash
 iverilog -o cpu src/*.v tb/tb_riscv.v
 vvp cpu
@@ -98,13 +125,11 @@ gtkwave dump.vcd
 
 ---
 
-## Future Enhancements
-- Pipelined implementation
+## Future Work
+- Pipeline implementation
 - Hazard detection and forwarding
-- Support for additional RV32I instructions
-- Performance optimization
+- Expanded RV32I instruction support
 
 ---
 
-### Author
-Designed and implemented as a learning project to demonstrate **RISC-V processor architecture and Verilog-based CPU design**.
+**Note:** This project is intended for academic and learning purposes.

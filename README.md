@@ -130,8 +130,8 @@ riscv-single-cycle-cpu/
 
 ---
 
-## Block Diagram
-![Block Diagram](docs/block_diagram.jpeg)
+## Sorted output for given array 
+![Block Diagram](docs/sorting.jpeg)
 
 ---
 

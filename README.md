@@ -15,6 +15,45 @@ computer architecture textbooks and reference designs.
 
 ---
 
+## Supported Instruction Formats
+The processor supports the following **RV32I instruction formats**:
+
+- **R-type** – Register arithmetic and logic
+- **I-type** – Immediate arithmetic and load
+- **S-type** – Store
+- **B-type** – Conditional branch
+
+---
+
+## Implemented Instructions
+
+### Arithmetic and Logical Instructions
+- `add`, `sub`
+- `and`, `or`
+- `addi`
+
+### Memory Access Instructions
+- `lw` – Load word
+- `sw` – Store word
+
+### Branch Instructions
+- `beq` – Branch if equal
+- `bne` – Branch if not equal
+- `blt` – Branch if less than
+- `bgt` – Branch if greater than
+
+---
+
+## Control and Execution Flow
+1. The **PC** supplies the address to instruction memory.
+2. The **instruction fields** are decoded to generate control signals.
+3. The **ALU** executes arithmetic, logic, or branch comparison operations.
+4. **Data memory** is accessed for load/store instructions.
+5. The selected result is written back to the register file.
+6. The **PC** is updated with either `PC + 4` or a branch target address.
+
+---
+
 ## Datapath Description
 The processor datapath consists of the following interconnected blocks:
 

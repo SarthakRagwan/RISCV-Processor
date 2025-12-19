@@ -108,51 +108,16 @@ The selected value is written back to the register file when `RegWrite` is asser
 
 ---
 
-## Supported Instruction Formats
-- **R-type** – Register arithmetic and logical instructions
-- **I-type** – Immediate arithmetic and load instructions
-- **S-type** – Store instructions
-- **B-type** – Branch instructions
-
----
-
-## Implemented Instructions
-
-### Arithmetic & Logical
-- `add`, `sub`
-- `and`, `or`
-- `addi`
-
-### Load & Store
-- `lw`
-- `sw`
-
-### Branch
-- `beq`
-- `bne`
-- `blt`
-- `bgt`
-
----
-
 ## Directory Structure
 ```
 riscv-single-cycle-cpu/
 │
 ├── src/        # Verilog RTL files
 ├── tb/         # Testbench files
-├── programs/   # Instruction memory files
+├── memfiles/   # Instruction memory files
+├── waves/      # Instruction memory files
 ├── docs/       # Block diagram and documentation
 └── README.md
-```
-
----
-
-## Simulation
-```bash
-iverilog -o cpu src/*.v tb/tb_riscv.v
-vvp cpu
-gtkwave dump.vcd
 ```
 
 ---
@@ -171,4 +136,4 @@ gtkwave dump.vcd
 
 ---
 
-**Note:** This project is intended for academic and learning purposes.
+

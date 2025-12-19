@@ -10,13 +10,13 @@ module Instruction_Memory(A,rst,RD);
     assign RD = rst ? Mem[A[31:2]] : 32'b0; //active low reset
 
     // Instruction through memfile
-//    initial begin
-//        $readmemh("memfiles/sort.hex",Mem);
-//    end
+   initial begin
+       $readmemh("memfiles/sort.hex",Mem);
+   end
     
     initial begin
         //I type
-//        Mem[0]=32'hFFC4A303;
+        // Mem[0]=32'hFFC4A303;
         //Mem[1]=32'h00842383;
         //S type
         //Mem[0]=32'h0064A423;
@@ -34,10 +34,11 @@ module Instruction_Memory(A,rst,RD);
         // Mem[0]=32'h40628233;
 
         //immidiate addition
-         Mem[0]=32'h00600093;
+        // Mem[0]=32'h00600093;
 
         // Mem[0]=32'h002081B3;
 
     end
+
 
 endmodule

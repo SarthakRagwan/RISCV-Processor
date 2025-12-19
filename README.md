@@ -1,4 +1,4 @@
-# RV32I Single-Cycle RISC-V Processor – Verilog
+# RV32I Single-Cycle RISC-V Processor 
 
 ## Overview
 This project implements a **32-bit RV32I single-cycle RISC-V processor** using **Verilog HDL**.
